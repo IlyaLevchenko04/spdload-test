@@ -43,7 +43,9 @@ export function Header() {
               </Link>
             </li>
             <li className="buttons-item">
-              <button className="signin-btn btn">SIGN IN</button>
+              <Link to={'favorites'} className="signin-btn btn">
+                SIGN IN
+              </Link>
             </li>
           </ul>
         </StyledSectionsContainer>
