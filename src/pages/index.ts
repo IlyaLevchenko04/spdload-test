@@ -1,4 +1,4 @@
 import { Homepage } from './homepage';
-import { Favorites } from './favorites';
+import { FavoritesPage } from './favorites';
 
-export { Homepage, Favorites };
+export { Homepage, FavoritesPage };

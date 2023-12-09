@@ -7,6 +7,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  padding-bottom: 96px;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 code {
@@ -17,6 +22,16 @@ code {
 li,
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   margin: 0;
   padding: 0;
 }
@@ -34,9 +49,9 @@ a {
   border: none;
 }
 
-.logo {
+/* .logo {
   color: #fff;
-}
+} */
 
 .header {
   background: rgba(30, 30, 30, 0.48);
@@ -49,6 +64,31 @@ a {
 .nav-list {
   display: flex;
   gap: 32px;
+}
+
+.nav-item a {
+  position: relative;
+}
+.nav-item a::before {
+  width: 0;
+  height: 1px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-item a:hover::before {
+  width: 100%;
+}
+
+.nav-item a.active::before {
+  width: 100%;
+}
+
+.nav-item {
+  width: 100%;
 }
 
 .buttons-list {
@@ -66,8 +106,17 @@ a {
 .fav-btn {
   width: 53px;
   height: 53px;
-  text-align: center;
-  background: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+}
+
+.fav-btn svg {
+  transition: 0.3s all ease-in-out;
+}
+.fav-btn:hover svg {
+  transform: scale(1.1);
 }
 
 .active-fav-btn {
@@ -76,6 +125,9 @@ a {
   text-align: center;
   background: #dd377d;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signin-btn {
@@ -93,6 +145,11 @@ a {
   font-weight: 600;
   line-height: normal;
   text-transform: uppercase;
+}
+
+.signin-btn:active {
+  background-color: #d3e2ff;
+  transform: scale(0.95);
 }
 
 .hero-section {
@@ -120,6 +177,8 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
 }
 
 .hero-header-span {
@@ -132,6 +191,7 @@ a {
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
+  z-index: 5;
 }
 
 .hero-text {
@@ -147,4 +207,211 @@ a {
   font-style: normal;
   font-weight: 300;
   line-height: normal;
+  z-index: 5;
+}
+
+.popular-tours-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.popular-tours-header {
+  color: #1e1e1e;
+  font-family: Syne;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.popular-tours-container {
+  padding-top: 39px;
+}
+
+.popular-tours-item-header {
+  color: #1e1e1e;
+  text-align: center;
+  font-family: Syne;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.popular-tours-item {
+  width: 100%;
+  border: 1px solid #d3eaff;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.popular-tours-item-photo {
+  width: 100%;
+}
+
+.popular-tours-text {
+  color: #556b84;
+  text-align: center;
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-bottom: 64px;
+}
+
+.popular-tours-info-wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 0 32px 12px 32px;
+}
+
+.popular-tours-info-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-tours-btn-list {
+  display: flex;
+  gap: 16px;
+}
+
+.popular-tours-pagination_bottom {
+  display: flex;
+  column-gap: 8px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.popular-tours-pagination_bottom-dot {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0);
+}
+
+.buy-btn-wrapper {
+  flex-grow: 2;
+}
+
+.buy-btn {
+  width: 100%;
+}
+
+.favorites-hero-section {
+  height: 480px;
+  background-color: #121212;
+  max-width: 1440px;
+  margin: 0 auto 0 auto;
+  z-index: 3;
+  background-image: url(../images//astronautImage.png);
+  background-size: cover;
+}
+
+.favorites-hero-header {
+  color: #fff;
+  text-align: center;
+  font-family: Syne;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+  position: absolute;
+  top: 220px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.clear-all {
+  color: #556b84;
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  border: none;
+  background-color: transparent;
+  margin-left: calc(100% - 84px);
+  width: max-content;
+  margin-bottom: 40px;
+}
+
+.favorites-cards-section {
+  padding-top: 48px;
+}
+
+.favorites-cards-list {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.custom-slider {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 740px;
+  z-index: 0;
+}
+
+.photo {
+  height: 740px;
+  width: 100%;
+}
+
+.custom-dots {
+  position: absolute;
+  top: 52%;
+  left: 47.5%;
+  transform: translate(-50%);
+  display: flex !important;
+  gap: 8px;
+}
+
+.heart-icon {
+  width: 22px;
+  height: 22px;
+  fill: #000;
+}
+
+.custom-dots li button {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+}
+
+.custom-dots li {
+  background-image: url(../images/dot.png);
+  width: 24px;
+  height: 24px;
+}
+
+.custom-dots .slick-active {
+  background-image: url(../images/activeDot.png);
+  width: 24px;
+  height: 24px;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination-btn {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+}
+
+.pagination-btns-wrapper {
+  gap: 16px;
 }

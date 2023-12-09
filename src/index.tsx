@@ -5,17 +5,28 @@ import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Container } from './styledComponents';
+import { RecoilRoot } from 'recoil';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+export const client = new ApolloClient({
+  uri: 'https://spacex-production.up.railway.app/',
+  cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Container>
-        <App />
-      </Container>
-    </BrowserRouter>
+    <ApolloProvider client={client}>
+      <BrowserRouter basename="/spdload-test">
+        <RecoilRoot>
+          <Container>
+            <App />
+          </Container>
+        </RecoilRoot>
+      </BrowserRouter>
+    </ApolloProvider>
   </React.StrictMode>
 );
 

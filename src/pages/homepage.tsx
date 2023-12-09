@@ -1,5 +1,11 @@
+import { PopularTours } from '../components';
 import { HeroSection } from '../components/heroSection';
 
 export function Homepage() {
-  return <HeroSection />;
+  return (
+    <main>
+      <HeroSection />
+      <PopularTours />
+    </main>
+  );
 }

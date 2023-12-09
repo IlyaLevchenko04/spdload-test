@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router';
-import { Homepage, Favorites } from './pages';
+import { Homepage, FavoritesPage } from './pages';
 import { Header } from './components';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <Routes>
       <Route path="*" element={<Header />}>
         <Route index element={<Homepage />} />
-        <Route path="favorites" element={<Favorites />} />
+        <Route path="favorites" element={<FavoritesPage />} />
       </Route>
     </Routes>
   );

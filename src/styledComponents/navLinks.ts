@@ -9,7 +9,4 @@ export const StyledNavLink = styled(NavLink)`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  &.active {
-    border-bottom: 1px #fff solid;
-  }
 `;

@@ -2,6 +2,8 @@ import { Outlet, useLocation } from 'react-router';
 import { NAV_ENUM } from '../constants';
 import { StyledSectionsContainer, StyledNavLink } from '../styledComponents';
 import { Link } from 'react-router-dom';
+import sprite from '../images/sprite/sprite.svg';
+import logo from '../images/spaceX.jpg';
 
 export function Header() {
   const location = useLocation();
@@ -11,7 +13,7 @@ export function Header() {
       <header className="header">
         <StyledSectionsContainer className="header-container">
           <Link to={'/'} className="logo">
-            Logo
+            <img src={logo} alt="logo" className="logo-photo" />
           </Link>
           <nav>
             <ul className="nav-list">
@@ -26,9 +28,17 @@ export function Header() {
             <li className="buttons-item">
               <Link to={'favorites'}>
                 {location.pathname === '/favorites' ? (
-                  <button className="active-fav-btn btn">v</button>
+                  <button className="active-fav-btn btn">
+                    <svg className="heart-icon">
+                      <use href={`${sprite}#Heart`} />
+                    </svg>
+                  </button>
                 ) : (
-                  <button className="fav-btn btn">v</button>
+                  <button className="fav-btn btn">
+                    <svg className="heart-icon">
+                      <use href={`${sprite}#Heart`} />
+                    </svg>
+                  </button>
                 )}
               </Link>
             </li>
