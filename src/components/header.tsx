@@ -29,7 +29,7 @@ export function Header() {
               <Link to={'favorites'}>
                 {location.pathname === '/favorites' ? (
                   <button className="active-fav-btn btn">
-                    <svg className="heart-icon">
+                    <svg className="heart-icon active-header-btn">
                       <use href={`${sprite}#Heart`} />
                     </svg>
                   </button>

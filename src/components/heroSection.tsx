@@ -5,6 +5,7 @@ import firstImage from '../images/firstImage.jpg';
 import secondImage from '../images/image2.jpg';
 import thirdImage from '../images/astronautImage.png';
 import { HashLink as Link } from 'react-router-hash-link';
+import sprite from '../images/sprite/sprite.svg';
 
 export function HeroSection() {
   const settings = {
@@ -25,6 +26,9 @@ export function HeroSection() {
       </h1>
       <Link className="hero-text" to={'#popular-tours'}>
         Explore tours
+        <svg className="arrow-down">
+          <use href={`${sprite}#arrowDown`} />
+        </svg>
       </Link>
       <Slider {...settings} className="custom-slider">
         <div>

@@ -49,10 +49,6 @@ a {
   border: none;
 }
 
-/* .logo {
-  color: #fff;
-} */
-
 .header {
   background: rgba(30, 30, 30, 0.48);
   position: absolute;
@@ -130,6 +126,11 @@ a {
   align-items: center;
 }
 
+.active-header-btn {
+  fill: #fff;
+  filter: brightness(10);
+}
+
 .signin-btn {
   display: flex;
   width: 163px;
@@ -145,6 +146,11 @@ a {
   font-weight: 600;
   line-height: normal;
   text-transform: uppercase;
+  transition: 0.3s all ease-in-out;
+}
+
+.signin-btn:hover {
+  background: #d3eaffe5;
 }
 
 .signin-btn:active {
@@ -208,6 +214,8 @@ a {
   font-weight: 300;
   line-height: normal;
   z-index: 5;
+  display: flex;
+  gap: 12px;
 }
 
 .popular-tours-list {
@@ -304,6 +312,10 @@ a {
 
 .buy-btn {
   width: 100%;
+}
+
+.buy-btn:hover {
+  background: #d3eaffa1;
 }
 
 .favorites-hero-section {
@@ -414,4 +426,17 @@ a {
 
 .pagination-btns-wrapper {
   gap: 16px;
+}
+
+.arrow-down {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 104%;
+  top: 8px;
+  transition: 0.3s all ease-in-out;
+}
+
+.hero-text:hover svg {
+  transform: scale(1.1);
 }

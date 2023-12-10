@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 import { StyledSectionsContainer } from '../styledComponents';
 import { PopularItem } from './';
 import { useRecoilState } from 'recoil';
-import { favoritesState, toursState } from '../recoil/atom';
+import { toursState } from '../recoil/atom';
 import { launchesQuery } from '../services/appoloQueries';
 import { useLazyQuery } from '@apollo/client';
 import { nanoid } from 'nanoid';
 import {
-  ChangeOffsetOptionsProps,
   ChangeOffsetProps,
   ExtendedLaunchProps,
   LaunchProps,
@@ -16,7 +15,6 @@ import sprite from '../images/sprite/sprite.svg';
 
 export function PopularTours() {
   const [offset, setOffset] = useState(0);
-  const [favorites, setFavorites] = useRecoilState(favoritesState);
   const [tour, setTour] = useRecoilState<ExtendedLaunchProps[]>(
     toursState as any
   );
@@ -50,8 +48,6 @@ export function PopularTours() {
           })
         );
 
-        console.log(data);
-
         setTour(data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -59,6 +55,7 @@ export function PopularTours() {
     };
 
     fetchData();
+    // eslint-disable-next-line
   }, [offset]);
 
   return (
