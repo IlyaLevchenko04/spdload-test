@@ -5,6 +5,7 @@ application. The project is bootstrapped with
 [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) and
 leverages various libraries and tools for enhanced functionality and development
 experience.
+Link for gh-pages https://ilyalevchenko04.github.io/spdload-test/
 
 ## Table of Contents
 
