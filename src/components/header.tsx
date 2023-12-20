@@ -3,7 +3,7 @@ import { NAV_ENUM } from '../constants';
 import { StyledSectionsContainer, StyledNavLink } from '../styledComponents';
 import { Link } from 'react-router-dom';
 import sprite from '../images/sprite/sprite.svg';
-import logo from '../images/spaceX.jpg';
+import logo from '../images/spaceX.png';
 
 export function Header() {
   const location = useLocation();

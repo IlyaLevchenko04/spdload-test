@@ -440,3 +440,12 @@ a {
 .hero-text:hover svg {
   transform: scale(1.1);
 }
+
+.spaceX {
+  filter: brightness(10);
+  fill: white;
+}
+
+.logo-photo {
+  width: 240px;
+}
